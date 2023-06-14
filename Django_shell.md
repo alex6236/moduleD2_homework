@@ -108,6 +108,6 @@ from news.models import *
     ```python
     comments = Comment.objects.filter(commentPost=best_post)
     for comment in comments:
-    print(f'Дата: {comment.dataCreation}, Имя пользователя: {comment.commentUser.username}, Рейтинг: {comment.rating}, Комментарий: {comment.text}')
+      print(f'Дата: {comment.dataCreation}, Имя пользователя: {comment.commentUser.username}, Рейтинг: {comment.rating}, Комментарий: {comment.text}')
 
     ```
