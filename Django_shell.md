@@ -40,7 +40,7 @@ from news.models import *
    post_nw.postCategory.add(cat_sports)
 ```
 
-# ====================================================================
+# =================
 
 # Выходил из shell
 
