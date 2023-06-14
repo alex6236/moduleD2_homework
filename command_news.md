@@ -17,8 +17,9 @@ python manage.py migrate
 
 python manage.py shell
 
-NewsPaper
+cd NewsPaper
 `from news.models import *`
 ===================================
 python manage.py createsuperuser
+
 python manage.py runserver
