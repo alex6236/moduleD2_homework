@@ -4,6 +4,7 @@
 from news.models import *
 ```
 
+
 1. Создать двух пользователей (с помощью метода `User.objects.create_user`).
 
    ```python
