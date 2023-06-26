@@ -56,7 +56,7 @@ class Post(models.Model):
         return self.text[:123] + '...'
     
     def __str__(self):
-        return f"{self.title} {self.postCategory}"
+        return f"Заголовок: {self.title} Дата: {self.dataCreation}"
 
 
 class PostCategory(models.Model):
