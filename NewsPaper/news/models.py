@@ -1,11 +1,15 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.db.models import Sum
+# from django.shortcuts import render
 
 
 class Author(models.Model):
     authorUser = models.OneToOneField(User, on_delete=models.CASCADE)
     ratingAuthor = models.SmallIntegerField(default=0)
+    
+    def __str__(self):
+        return self.authorUser
 
     def update_rating(self):
         postRat = self.post_set.all().aggregate(postRating=Sum('rating')) or 0
@@ -44,6 +48,7 @@ class Post(models.Model):
     text = models.TextField()
     rating = models.SmallIntegerField(default=0)
 
+
     def like(self):
         self.rating += 1
         self.save()
@@ -81,3 +86,4 @@ class Comment(models.Model):
     def dislike(self):
         self.rating -= 1
         self.save()
+

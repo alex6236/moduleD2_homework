@@ -10,12 +10,15 @@ from news.models import *
    ```python
    user1 = User.objects.create_user(username='user1', password='111')
    user2 = User.objects.create_user(username='user2', password='222')
+   lorem = User.objects.create_user(username='lorem', password='333')
    ```
 
 2. Создать два объекта модели Author, связанные с пользователями.
    ```python
    author1 = Author.objects.create(authorUser=user1)
    author2 = Author.objects.create(authorUser=user2)
+   author3 = Author.objects.create(authorUser=user3)
+   lorem = Author.objects.create(authorUser=lorem)
    ```
 3. Добавить 4 категории в модель Category.
    ```python
@@ -23,6 +26,7 @@ from news.models import *
    cat_politics = Category.objects.create(name='politics')
    cat_education = Category.objects.create(name='education')
    cat_technology = Category.objects.create(name='technology')
+   cat_lorem = Category.objects.create(name='lorem')
    ```
 4. Добавить 2 статьи и 1 новость.
    ```python
@@ -32,6 +36,7 @@ from news.models import *
       author=author1, categoryType='AR', title='Статья 2', text='Текст статьи 2')
    post_nw = Post.objects.create(
       author=author2, categoryType='NW', title='Новость', text='Текст новости')
+   lorem = Post.objects.create(author=lorem, categoryType='NW', title='lorem', text='lorem')
    ```
 5. Присвоить им категории (как минимум в одной статье/новости должно быть не меньше 2 категорий).
 
