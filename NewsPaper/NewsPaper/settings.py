@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.flatpages',
     'news.apps.NewsConfig',
     'accounts.apps.AccountsConfig',
-    'static'
+    # 'static'
 ]
 
 SITE_ID = 1
@@ -117,7 +117,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ru'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
