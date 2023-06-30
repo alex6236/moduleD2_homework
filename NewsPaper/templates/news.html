@@ -9,18 +9,18 @@
     <h3>
       Лента новостей
     </h3>
-    Всего публикаций: {{news|length}}
+    Публикаций на странице: {{news|length}}
   </div>
 {% if news %}
   {% for n in news %}
     {% if n.title == 'lorem' %}
       <div class="header_news" onclick="location.href='{% url 'lorem_post' pk=n.pk %}'">
-        <h5>{% lorem 4 w random %}</h5>
+        <h5 class="upper">{% lorem 4 w random %}</h5>
         {{n.dataCreation|date:'M d Y'}}
       </div>
     {% else %}
       <div class="header_news" onclick="location.href='{% url 'news_detail' pk=n.pk %}'">
-        <h5>{{ n.title|censor }}</h5>
+        <h5 class="upper">{{ n.title|censor }}</h5>
         {{n.dataCreation|date:'M d Y'}}
       </div>
     {% endif %}
@@ -28,10 +28,10 @@
   <div class="text_news">
     {% if n.title == 'lorem' %}
     {% lorem 30 w random %}
-      <a href="{% url 'lorem_post' pk=n.pk %}">Подробнее</a>
+      <a href="{% url 'lorem_post' pk=n.pk %}">Подробнее &raquo;</a>
     {% else %}
       {{ n.text|truncatechars:50|censor }}
-      <a href="{% url 'news_detail' pk=n.pk %}">Подробнее</a>
+      <a href="{% url 'news_detail' pk=n.pk %}">Подробнее &raquo;</a>
     {% endif %}
   </div>
   {% endfor %}
